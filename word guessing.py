@@ -1,27 +1,36 @@
 import random
 
-name=input("What's your name? ")
-print(" ")
-print("Welcome ",name,"!")
-print(" ")
+name=input("Welcome! \nWhat's your name? ")
+print("Attaboy! Hi " + name + "! Welcome to a word guess")
+
 words=['cabbage', 'book', 'bottle', 'oven', 'pencil']
 
 word=random.choice(words)
 
-print("It's a singular object")
+turns=12
 
-turns=10
+guesses=''
 
-# while turns>0:
+while turns>0:
+    guess=input("Put in your guess \n")
+    guesses+=guess
 
-# import random
+    fail=0
+    for char in word:
 
-# cars = ["Ford", "Volvo", "BMW", "Star-gazer", "IONIQ"]
+        if char in guesses:
+            print(char, "\n")
+        
+        else:
+            fail+=1
+            print("_ \n")
+    
+    if fail==0:
+        print("You win!")
+        break
 
-# num =(random.randint(0,4))
+    if turns==1 & fail!=0:
+        print("Sorry you lose")
+        break
 
-# cars.append("Mustang")
-
-# x=cars[5]
-
-# print(x)
+    turns-=1

@@ -6,7 +6,6 @@ min=int(input("minimum value= "))
 max=int(input("maximum value= "))
 
 pick=(random.randint(min,max))
-print(pick)
 
 print("You have 10 chances!")
 for x in range(10):
